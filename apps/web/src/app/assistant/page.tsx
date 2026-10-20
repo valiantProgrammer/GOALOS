@@ -107,11 +107,11 @@ export default function AssistantPage() {
   };
 
   return (
-    <div className="flex h-screen w-full bg-[#030712] text-slate-100 overflow-hidden font-sans">
-      <SidebarNav activeRoute="/dashboard" />
+    <div className="flex h-screen overflow-hidden w-full bg-transparent text-slate-100 overflow-hidden font-sans">
+      <SidebarNav activeRoute="/dashboard" className="hidden md:flex shrink-0" />
 
       <div className="flex flex-col flex-1 min-w-0 h-full overflow-hidden">
-        <TopBar searchPlaceholder="Search system assistant..." />
+        <TopBar searchPlaceholder="Search system assistant..." className="shrink-0" />
 
         <main className="flex-1 overflow-y-auto p-6 space-y-6">
           {/* Header Title */}

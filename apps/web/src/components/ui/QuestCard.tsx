@@ -31,8 +31,8 @@ export const QuestCard: React.FC<QuestCardProps> = ({
       className={clsx(
         "flex items-center justify-between p-3.5 rounded-xl border transition-all duration-200",
         completed
-          ? "bg-[#0a1224]/50 border-[#142852]/60 opacity-75"
-          : "bg-[#0a1224] hover:bg-[#0d1933] border-[#142852] hover:border-[#204899] shadow-md",
+          ? "bg-[rgba(5,10,24,0.5)] border-[rgba(59,130,246,0.12)] opacity-75"
+          : "bg-[rgba(5,10,24,0.65)] hover:bg-[rgba(10,20,45,0.75)] border-[rgba(59,130,246,0.18)] hover:border-[rgba(59,130,246,0.35)] shadow-md",
         className
       )}
     >

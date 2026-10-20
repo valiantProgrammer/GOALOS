@@ -134,11 +134,11 @@ export default function CommunityPage() {
   };
 
   return (
-    <div className="flex h-screen w-full bg-[#030712] text-slate-100 overflow-hidden font-sans">
-      <SidebarNav activeRoute="/community" />
+    <div className="flex h-screen overflow-hidden w-full bg-transparent text-slate-100 overflow-hidden font-sans">
+      <SidebarNav activeRoute="/community" className="hidden md:flex shrink-0" />
 
       <div className="flex flex-col flex-1 min-w-0 h-full overflow-hidden">
-        <TopBar searchPlaceholder="Search users, parties, community..." />
+        <TopBar searchPlaceholder="Search users, parties, community..." className="shrink-0" />
 
         {toastMessage && (
           <div className="absolute top-16 right-8 z-50 bg-[#0d1b30] border border-cyan-400 text-cyan-200 px-4 py-2 rounded-lg shadow-lg shadow-cyan-950/50 flex items-center gap-2 text-xs font-semibold animate-pulse">

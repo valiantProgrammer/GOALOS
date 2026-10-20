@@ -73,6 +73,7 @@ function createWindow() {
     title: "GoalOS — The Hunter System",
     titleBarStyle: process.platform === "darwin" ? "hiddenInset" : "default",
     icon: path.join(__dirname, "..", "assets", "icon.png"),
+    autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,

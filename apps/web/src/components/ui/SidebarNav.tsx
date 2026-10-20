@@ -52,7 +52,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({ isAdmin = true, classNam
   return (
     <aside
       className={clsx(
-        "w-60 h-screen bg-[#070d1c] border-r border-[#142852] flex flex-col justify-between py-6 px-3.5 select-none shrink-0",
+        "w-60 h-screen bg-[rgba(5,11,26,0.78)] backdrop-blur-[14px] border-r border-[rgba(59,130,246,0.15)] flex flex-col justify-between py-6 px-3.5 select-none shrink-0 overflow-y-auto",
         className
       )}
     >

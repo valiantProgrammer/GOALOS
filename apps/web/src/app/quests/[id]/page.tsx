@@ -11,6 +11,7 @@ import {
   SystemButton,
   DifficultyChip,
   StatusChip,
+  PosterPanel,
 } from "@/components/ui";
 import {
   BookOpen,
@@ -50,13 +51,13 @@ export default function QuestDetailsPage() {
   const tabs = ["Overview", "Checklist", "Notes", "Subtasks", "Analytics"];
 
   return (
-    <div className="flex min-h-screen bg-[#050814] text-[#f8fafc]">
-      <SidebarNav className="hidden md:flex" />
+    <div className="flex h-screen overflow-hidden bg-[#050814] text-[#f8fafc]">
+      <SidebarNav className="hidden md:flex shrink-0" />
 
-      <div className="flex-1 flex flex-col min-w-0">
-        <TopBar />
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+        <TopBar className="shrink-0" />
 
-        <main className="flex-1 p-6 lg:p-8 pb-24 md:pb-8 space-y-6 max-w-7xl mx-auto w-full">
+        <main className="flex-1 overflow-y-auto p-6 lg:p-8 pb-24 md:pb-8 space-y-6 max-w-7xl mx-auto w-full">
           {/* Breadcrumb / Back Link */}
           <div>
             <Link
@@ -228,26 +229,12 @@ export default function QuestDetailsPage() {
 
             {/* Right 4 Cols: Decorative Art Panel matching DM-06 */}
             <div className="lg:col-span-4">
-              <div className="h-[520px] rounded-2xl overflow-hidden border border-[#142852] bg-gradient-to-b from-[#0a1835] via-[#060e20] to-[#02050e] relative flex flex-col justify-end p-6 shadow-[0_0_25px_rgba(0,210,255,0.15)]">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,210,255,0.25),_transparent)]" />
-                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-36 h-36 rounded-full bg-[#00d2ff]/20 blur-2xl pointer-events-none" />
-
-                {/* Silhouette */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-28 h-64 border border-[#00d2ff]/30 rounded-t-full flex items-center justify-center">
-                    <span className="font-heading text-4xl text-[#00d2ff] opacity-40">⚔</span>
-                  </div>
-                </div>
-
-                <div className="relative z-10 text-right">
-                  <h3 className="font-heading text-lg font-black text-white uppercase tracking-wider">
-                    KNOWLEDGE IS A WEAPON
-                  </h3>
-                  <h3 className="font-heading text-lg font-black text-[#00d2ff] uppercase tracking-wider">
-                    USE IT
-                  </h3>
-                </div>
-              </div>
+              <PosterPanel
+                variant="castle"
+                quote="KNOWLEDGE IS A WEAPON"
+                subquote="USE IT"
+                className="h-[520px] w-full"
+              />
             </div>
           </div>
         </main>

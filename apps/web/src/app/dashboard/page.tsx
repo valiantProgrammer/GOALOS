@@ -13,6 +13,7 @@ import {
   QuestCard,
   DifficultyChip,
   StatusChip,
+  AppShell,
 } from "@/components/ui";
 import { DEMO_HUNTER } from "@goalos/config";
 import { TaskDifficulty, TaskStatus } from "@goalos/types";
@@ -139,26 +140,8 @@ export default function MainDashboardPage() {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#050814] text-[#f8fafc]">
-      {/* Desktop Sidebar Chrome */}
-      <SidebarNav className="hidden md:flex" />
-
-      {/* Main Container */}
-      <div className="flex-1 flex flex-col min-w-0 relative overflow-y-auto">
-        <TopBar />
-
-        {/* Hero Background Banner matching DM-01 (Landing Page / Home) */}
-        <div className="absolute top-16 left-0 right-0 h-72 sm:h-80 pointer-events-none overflow-hidden select-none z-0">
-          <div
-            className="w-full h-full bg-cover bg-center bg-no-repeat opacity-45 mix-blend-screen"
-            style={{ backgroundImage: "url('/ru.png')" }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050814]/20 via-[#050814]/60 to-[#050814]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050814]/85 via-transparent to-[#050814]/85" />
-        </div>
-
-        {/* Scrollable Dashboard Body matching DM-04 */}
-        <main className="flex-1 p-6 lg:p-8 pb-24 md:pb-8 space-y-6 max-w-7xl mx-auto w-full relative z-10">
+    <AppShell activeRoute="/dashboard">
+      <main className="p-6 lg:p-8 pb-24 md:pb-8 space-y-6 max-w-7xl mx-auto w-full relative z-10">
           {/* Header Row: Greeting & Date */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
@@ -336,9 +319,6 @@ export default function MainDashboardPage() {
             </div>
           </HudPanel>
         </main>
-      </div>
-
-      <BottomNav />
-    </div>
+    </AppShell>
   );
 }

@@ -40,11 +40,11 @@ export default function RewardShopPage() {
   };
 
   return (
-    <div className="flex h-screen bg-[#050814] text-slate-100 overflow-hidden font-sans">
-      <SidebarNav activeRoute="/shop" />
+    <div className="flex h-screen overflow-hidden bg-[#050814] text-slate-100 overflow-hidden font-sans">
+      <SidebarNav activeRoute="/shop" className="hidden md:flex shrink-0" />
 
-      <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
-        <TopBar searchPlaceholder="Search shop items, themes..." />
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+        <TopBar searchPlaceholder="Search shop items, themes..." className="shrink-0" />
 
         <div className="flex-1 flex overflow-hidden">
           {/* Main Shop Area */}
@@ -125,7 +125,7 @@ export default function RewardShopPage() {
           </main>
 
           {/* Right Art Panel */}
-          <ArtPanel quote="EARN CUSTOMIZE STAND OUT" />
+          <ArtPanel variant="castle" quote="EARN CUSTOMIZE STAND OUT" />
         </div>
       </div>
     </div>

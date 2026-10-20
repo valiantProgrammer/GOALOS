@@ -28,13 +28,13 @@ export default function HunterProfilePage() {
   const hunter = DEMO_HUNTER;
 
   return (
-    <div className="flex min-h-screen bg-[#050814] text-[#f8fafc]">
-      <SidebarNav className="hidden md:flex" />
+    <div className="flex h-screen overflow-hidden bg-[#050814] text-[#f8fafc]">
+      <SidebarNav className="hidden md:flex shrink-0" />
 
-      <div className="flex-1 flex flex-col min-w-0">
-        <TopBar />
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+        <TopBar className="shrink-0" />
 
-        <main className="flex-1 p-6 lg:p-8 pb-24 md:pb-8 space-y-6 max-w-5xl mx-auto w-full">
+        <main className="flex-1 overflow-y-auto p-6 lg:p-8 pb-24 md:pb-8 space-y-6 max-w-5xl mx-auto w-full">
           <div>
             <h1 className="font-heading text-2xl lg:text-3xl font-black text-white">
               Hunter Profile

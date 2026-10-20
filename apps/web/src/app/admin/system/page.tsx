@@ -43,11 +43,11 @@ export default function SystemMonitoringPage() {
   };
 
   return (
-    <div className="flex h-screen w-full bg-[#030712] text-slate-100 overflow-hidden font-sans">
-      <SidebarNav activeRoute="/admin" />
+    <div className="flex h-screen overflow-hidden w-full bg-[#030712] text-slate-100 overflow-hidden font-sans">
+      <SidebarNav activeRoute="/admin" className="hidden md:flex shrink-0" />
 
       <div className="flex flex-col flex-1 min-w-0 h-full overflow-hidden">
-        <TopBar searchPlaceholder="Search logs, backups, metrics..." />
+        <TopBar searchPlaceholder="Search logs, backups, metrics..." className="shrink-0" />
 
         {toastMessage && (
           <div className="absolute top-16 right-8 z-50 bg-[#0d1b30] border border-cyan-400 text-cyan-200 px-4 py-2 rounded-lg shadow-lg shadow-cyan-950/50 flex items-center gap-2 text-xs font-semibold animate-pulse">

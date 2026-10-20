@@ -56,13 +56,13 @@ export default function AchievementsPage() {
   const tabs = ["All", "Unlocked (18)", "Locked (20)", "Titles"];
 
   return (
-    <div className="flex min-h-screen bg-[#050814] text-[#f8fafc]">
-      <SidebarNav className="hidden md:flex" />
+    <div className="flex h-screen overflow-hidden bg-[#050814] text-[#f8fafc]">
+      <SidebarNav className="hidden md:flex shrink-0" />
 
-      <div className="flex-1 flex flex-col min-w-0">
-        <TopBar />
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+        <TopBar className="shrink-0" />
 
-        <main className="flex-1 p-6 lg:p-8 pb-24 md:pb-8 space-y-6 max-w-7xl mx-auto w-full">
+        <main className="flex-1 overflow-y-auto p-6 lg:p-8 pb-24 md:pb-8 space-y-6 max-w-7xl mx-auto w-full">
           {/* Header Row */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>

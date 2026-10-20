@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { Eye, EyeOff } from "lucide-react";
 import { AuthPoster } from "@/components/auth/AuthPoster";
 import { PasswordStrength } from "@/components/auth/PasswordStrength";
+import { AppBackground } from "@/components/ui/AppBackground";
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -71,6 +72,7 @@ export default function SignUpPage() {
 
   return (
     <div className="min-h-screen w-full bg-[#050b1a] flex items-center justify-center p-3 sm:p-5 relative overflow-hidden font-sans">
+      <AppBackground variant="hero" />
       {/* Background ambient radial glow */}
       <div className="absolute w-[600px] h-[600px] rounded-full bg-[#1d4ed8]/10 blur-[130px] pointer-events-none -top-20 -left-20" />
       <div className="absolute w-[500px] h-[500px] rounded-full bg-[#3b82f6]/10 blur-[120px] pointer-events-none -bottom-20 -right-20" />

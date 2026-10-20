@@ -74,11 +74,11 @@ export default function GoalsDashboardPage() {
   };
 
   return (
-    <div className="flex h-screen bg-[#050814] text-slate-100 overflow-hidden font-sans">
-      <SidebarNav activeRoute="/goals" />
+    <div className="flex h-screen overflow-hidden bg-[#050814] text-slate-100 overflow-hidden font-sans">
+      <SidebarNav activeRoute="/goals" className="hidden md:flex shrink-0" />
 
-      <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
-        <TopBar searchPlaceholder="Search goals, habits..." />
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+        <TopBar searchPlaceholder="Search goals, habits..." className="shrink-0" />
 
         <div className="flex-1 flex overflow-hidden">
           {/* Main Goals Area */}
@@ -189,7 +189,7 @@ export default function GoalsDashboardPage() {
           </main>
 
           {/* Right Art Panel */}
-          <ArtPanel quote="BIG GOALS CREATE A BIGGER YOU" />
+          <ArtPanel variant="castle" quote="BIG GOALS CREATE A BIGGER YOU" />
         </div>
       </div>
     </div>

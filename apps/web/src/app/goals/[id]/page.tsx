@@ -34,11 +34,11 @@ export default function GoalDetailsPage() {
   };
 
   return (
-    <div className="flex h-screen bg-[#050814] text-slate-100 overflow-hidden font-sans">
-      <SidebarNav activeRoute="/goals" />
+    <div className="flex h-screen overflow-hidden bg-[#050814] text-slate-100 overflow-hidden font-sans">
+      <SidebarNav activeRoute="/goals" className="hidden md:flex shrink-0" />
 
-      <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
-        <TopBar searchPlaceholder="Search goals, milestones..." />
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+        <TopBar searchPlaceholder="Search goals, milestones..." className="shrink-0" />
 
         <div className="flex-1 flex overflow-hidden">
           {/* Main Content Area */}
@@ -180,7 +180,7 @@ export default function GoalDetailsPage() {
           </main>
 
           {/* Right Art Panel */}
-          <ArtPanel quote="DISCIPLINE TURNS GOALS INTO REALITY" />
+          <ArtPanel variant="hunter" quote="DISCIPLINE TURNS GOALS INTO REALITY" />
         </div>
       </div>
     </div>

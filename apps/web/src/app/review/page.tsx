@@ -21,11 +21,11 @@ export default function WeeklyReviewPage() {
   const [isGenerating, setIsGenerating] = useState(false);
 
   return (
-    <div className="flex h-screen bg-[#050814] text-slate-100 overflow-hidden font-sans">
-      <SidebarNav activeRoute="/review" />
+    <div className="flex h-screen overflow-hidden bg-[#050814] text-slate-100 overflow-hidden font-sans">
+      <SidebarNav activeRoute="/review" className="hidden md:flex shrink-0" />
 
-      <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
-        <TopBar searchPlaceholder="Search weekly review, summary..." />
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+        <TopBar searchPlaceholder="Search weekly review, summary..." className="shrink-0" />
 
         <div className="flex-1 flex overflow-hidden">
           {/* Main Review Area */}

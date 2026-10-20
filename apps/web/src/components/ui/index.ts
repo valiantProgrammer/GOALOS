@@ -10,3 +10,6 @@ export * from "./SidebarNav";
 export * from "./BottomNav";
 export * from "./TopBar";
 export * from "./ArtPanel";
+export * from "./PosterPanel";
+export * from "./AppShell";
+export * from "./AppBackground";

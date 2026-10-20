@@ -24,7 +24,7 @@ export const TopBar: React.FC<TopBarProps> = ({
   return (
     <header
       className={clsx(
-        "h-16 px-6 border-b border-[#142852] bg-[#070d1c]/80 backdrop-blur-md flex items-center justify-between gap-4 select-none ",
+        "h-16 px-6 border-b border-[rgba(59,130,246,0.15)] bg-[rgba(5,11,26,0.65)] backdrop-blur-[12px] flex items-center justify-between gap-4 select-none shrink-0 z-20",
         className
       )}
     >
@@ -34,7 +34,7 @@ export const TopBar: React.FC<TopBarProps> = ({
         <input
           type="text"
           placeholder={searchPlaceholder}
-          className="w-full bg-[#0a1224] border border-[#142852] focus:border-[#00d2ff] rounded-xl pl-9 pr-4 py-2 text-xs text-[#f8fafc] placeholder-[#64748b] outline-none transition-colors"
+          className="w-full bg-[rgba(5,10,24,0.65)] border border-[rgba(59,130,246,0.18)] focus:border-[#00d2ff] rounded-xl pl-9 pr-4 py-2 text-xs text-[#f8fafc] placeholder-[#64748b] outline-none transition-colors"
         />
       </div>
 

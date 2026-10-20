@@ -42,11 +42,11 @@ export default function AccountPrivacyPage() {
   };
 
   return (
-    <div className="flex max-h-screen bg-[#050814] text-[#f8fafc]">
-      <SidebarNav className="hidden md:flex" />
+    <div className="flex h-screen overflow-hidden bg-[#050814] text-[#f8fafc]">
+      <SidebarNav className="hidden md:flex shrink-0" />
 
-      <div className="flex-1 flex flex-col min-w-0 relative overflow-y-auto">
-        <TopBar />
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+        <TopBar className="shrink-0" />
 
         {/* Hero Background Banner */}
         <div className="absolute top-16 left-0 right-0 h-64 sm:h-72 pointer-events-none overflow-hidden select-none z-0">
@@ -58,7 +58,7 @@ export default function AccountPrivacyPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#050814]/85 via-transparent to-[#050814]/85" />
         </div>
 
-        <main className="flex-1 p-6 lg:p-8 pb-24 md:pb-8 space-y-6 max-w-7xl mx-auto w-full relative z-10">
+        <main className="flex-1 overflow-y-auto p-6 lg:p-8 pb-24 md:pb-8 space-y-6 max-w-7xl mx-auto w-full relative z-10">
           <div>
             <h1 className="font-heading text-2xl lg:text-3xl font-black text-white">
               Account & Privacy

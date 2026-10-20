@@ -25,11 +25,11 @@ export default function AdminDashboardPage() {
   const [activeTab, setActiveTab] = useState("overview");
 
   return (
-    <div className="flex h-screen w-full bg-[#030712] text-slate-100 overflow-hidden font-sans">
-      <SidebarNav activeRoute="/admin" />
+    <div className="flex h-screen overflow-hidden w-full bg-[#030712] text-slate-100 overflow-hidden font-sans">
+      <SidebarNav activeRoute="/admin" className="hidden md:flex shrink-0" />
 
       <div className="flex flex-col flex-1 min-w-0 h-full overflow-hidden">
-        <TopBar searchPlaceholder="Search users, quests, system logs..." />
+        <TopBar searchPlaceholder="Search users, quests, system logs..." className="shrink-0" />
 
         <main className="flex-1 overflow-y-auto p-6 space-y-6">
           {/* Header Title & Date Range */}

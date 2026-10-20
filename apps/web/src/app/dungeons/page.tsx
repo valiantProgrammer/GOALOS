@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { SidebarNav } from "@/components/ui/SidebarNav";
 import { TopBar } from "@/components/ui/TopBar";
 import { BottomNav } from "@/components/ui/BottomNav";
+import { PosterPanel } from "@/components/ui/PosterPanel";
 import { DUNGEONS_DATA } from "@goalos/config";
 import { Lock, Sparkles, Trophy, Award, Coins, ChevronRight, ShieldCheck } from "lucide-react";
 
@@ -54,11 +55,11 @@ export default function DungeonsPage() {
   };
 
   return (
-    <div className="flex h-screen w-full bg-[#030712] text-slate-100 overflow-hidden font-sans">
-      <SidebarNav activeRoute="/goals" />
+    <div className="flex h-screen overflow-hidden w-full bg-transparent text-slate-100 overflow-hidden font-sans">
+      <SidebarNav activeRoute="/goals" className="hidden md:flex shrink-0" />
 
       <div className="flex flex-col flex-1 min-w-0 h-full overflow-hidden">
-        <TopBar searchPlaceholder="Search goals, quests, habits..." />
+        <TopBar searchPlaceholder="Search goals, quests, habits..." className="shrink-0" />
 
         {toastMessage && (
           <div className="absolute top-16 right-8 z-50 bg-[#0d1b30] border border-cyan-400 text-cyan-200 px-4 py-2 rounded-lg shadow-lg shadow-cyan-950/50 flex items-center gap-2 text-xs font-semibold animate-pulse">
@@ -180,46 +181,12 @@ export default function DungeonsPage() {
             </div>
 
             {/* Column 2: Portal Art & Motivational Quote */}
-            <div className="lg:col-span-4 bg-[#070e1c] border border-blue-900/40 rounded-2xl relative min-h-[440px] flex flex-col justify-end p-6 overflow-hidden shadow-2xl">
-              {/* Background Art representation of Glowing Dungeon Gate */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-[#07132a]/60 to-[#0c224a]/80" />
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-80">
-                <svg className="w-full h-full" viewBox="0 0 240 320">
-                  {/* Gate Arch */}
-                  <path
-                    d="M30,320 L30,140 C30,60 210,60 210,140 L210,320"
-                    fill="none"
-                    stroke="#1d4ed8"
-                    strokeWidth="6"
-                  />
-                  <path
-                    d="M45,320 L45,150 C45,85 195,85 195,150 L195,320"
-                    fill="none"
-                    stroke="#38bdf8"
-                    strokeWidth="2"
-                    strokeDasharray="4 2"
-                  />
-                  {/* Glowing Core Portal */}
-                  <ellipse cx="120" cy="180" rx="60" ry="90" fill="#0284c7" opacity="0.4" />
-                  <ellipse cx="120" cy="180" rx="35" ry="60" fill="#38bdf8" opacity="0.6" />
-                  <ellipse cx="120" cy="180" rx="15" ry="30" fill="#ffffff" opacity="0.8" />
-                  {/* Hunter with Cape facing the Gate */}
-                  <circle cx="120" cy="220" r="10" fill="#030712" />
-                  <path d="M105,320 L112,240 L128,240 L135,320 Z" fill="#030712" />
-                  <path d="M110,245 L90,290 L115,280 Z" fill="#030712" opacity="0.8" />
-                </svg>
-              </div>
-
-              {/* Text Quote at the Bottom */}
-              <div className="relative z-10 text-center space-y-1">
-                <div className="text-sm font-black tracking-widest text-sky-400 uppercase drop-shadow-[0_0_10px_#38bdf8]">
-                  THE JOURNEY
-                </div>
-                <div className="text-sm font-black tracking-widest text-sky-400 uppercase drop-shadow-[0_0_10px_#38bdf8]">
-                  NEVER ENDS
-                </div>
-              </div>
-            </div>
+            <PosterPanel
+              variant="castle"
+              quote="THE JOURNEY"
+              subquote="NEVER ENDS"
+              className="lg:col-span-4 min-h-[440px]"
+            />
 
             {/* Column 3: Chapter Rewards Card */}
             <div className="lg:col-span-3 bg-[#070e1c] border border-blue-900/40 rounded-2xl p-6 flex flex-col justify-between space-y-6 shadow-2xl">

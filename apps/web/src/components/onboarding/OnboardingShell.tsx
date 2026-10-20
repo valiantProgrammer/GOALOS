@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { VerticalStepper } from "./VerticalStepper";
 import { StepArt } from "./StepArt";
+import { AppBackground } from "@/components/ui/AppBackground";
 
 interface OnboardingShellProps {
   currentStep: number;
@@ -34,6 +35,7 @@ export function OnboardingShell({
 
   return (
     <div className="min-h-screen w-full bg-[#050b1a] flex items-center justify-center p-3 sm:p-5 relative overflow-hidden font-sans">
+      <AppBackground variant="hero" />
       {/* Background ambient radial glow */}
       <div className="absolute w-[600px] h-[600px] rounded-full bg-[#1d4ed8]/10 blur-[130px] pointer-events-none -top-20 -left-20" />
       <div className="absolute w-[500px] h-[500px] rounded-full bg-[#3b82f6]/10 blur-[120px] pointer-events-none -bottom-20 -right-20" />

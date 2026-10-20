@@ -20,11 +20,11 @@ export default function CalendarPage() {
   const [viewMode, setViewMode] = useState<"Day" | "Week" | "Month">("Week");
 
   return (
-    <div className="flex h-screen bg-[#050814] text-slate-100 overflow-hidden font-sans">
-      <SidebarNav activeRoute="/calendar" />
+    <div className="flex h-screen overflow-hidden bg-[#050814] text-slate-100 overflow-hidden font-sans">
+      <SidebarNav activeRoute="/calendar" className="hidden md:flex shrink-0" />
 
-      <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
-        <TopBar searchPlaceholder="Search events, schedule..." />
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+        <TopBar searchPlaceholder="Search events, schedule..." className="shrink-0" />
 
         <div className="flex-1 flex overflow-hidden">
           {/* Main Calendar View */}

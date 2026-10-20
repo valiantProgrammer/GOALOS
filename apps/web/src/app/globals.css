@@ -8,14 +8,80 @@
   --font-orbitron: 'Orbitron', sans-serif;
   --font-rajdhani: 'Rajdhani', sans-serif;
   --font-inter: 'Inter', sans-serif;
+  --surface-card: rgba(8, 16, 38, 0.72);
+  --surface-nested: rgba(5, 10, 24, 0.65);
   color-scheme: dark;
 }
 
+html,
 body {
-  background-color: #050814;
+  height: 100%;
+  overflow: hidden;
+  background-color: #050b1a;
   color: #f8fafc;
   font-family: var(--font-inter);
-  overflow-x: hidden;
+}
+
+/* Ensure page root containers allow global AppBackground to show through */
+div.flex.h-screen,
+div[class*="flex"][class*="h-screen"],
+div[class*="flex h-screen overflow-hidden bg-"],
+div[class*="flex h-screen w-screen overflow-hidden bg-"] {
+  background-color: transparent !important;
+}
+
+/* Glass Card Token */
+.glass-card {
+  background-color: var(--surface-card);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+}
+
+.nested-tile {
+  background-color: var(--surface-nested);
+  border: 1px solid rgba(59, 130, 246, 0.14);
+}
+
+/* Subtle Ambient Motion Keyframes */
+@keyframes slowDrift {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-15%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes floatEmber {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.75;
+  }
+  80% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(-90vh) scale(1.15);
+    opacity: 0;
+  }
+}
+
+.animate-slow-drift {
+  animation: slowDrift 60s linear infinite;
+  will-change: transform;
+}
+
+.animate-float-ember {
+  animation: floatEmber 18s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-slow-drift,
+  .animate-float-ember {
+    animation: none !important;
+  }
 }
 
 /* Custom Webkit Scrollbars matching HUD theme */
@@ -25,7 +91,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #050814;
+  background: rgba(5, 11, 26, 0.5);
 }
 
 ::-webkit-scrollbar-thumb {
