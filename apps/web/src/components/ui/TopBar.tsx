@@ -24,7 +24,7 @@ export const TopBar: React.FC<TopBarProps> = ({
   return (
     <header
       className={clsx(
-        "h-16 px-6 border-b border-[#142852] bg-[#070d1c]/80 backdrop-blur-md flex items-center justify-between gap-4 select-none",
+        "h-16 px-6 border-b border-[#142852] bg-[#070d1c]/80 backdrop-blur-md flex items-center justify-between gap-4 select-none ",
         className
       )}
     >

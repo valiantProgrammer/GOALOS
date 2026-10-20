@@ -42,13 +42,23 @@ export default function AccountPrivacyPage() {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#050814] text-[#f8fafc]">
+    <div className="flex max-h-screen bg-[#050814] text-[#f8fafc]">
       <SidebarNav className="hidden md:flex" />
 
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0 relative overflow-y-auto">
         <TopBar />
 
-        <main className="flex-1 p-6 lg:p-8 pb-24 md:pb-8 space-y-6 max-w-7xl mx-auto w-full">
+        {/* Hero Background Banner */}
+        <div className="absolute top-16 left-0 right-0 h-64 sm:h-72 pointer-events-none overflow-hidden select-none z-0">
+          <div
+            className="w-full h-full bg-cover bg-center bg-no-repeat opacity-40 mix-blend-screen"
+            style={{ backgroundImage: "url('/ru.png')" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050814]/20 via-[#050814]/60 to-[#050814]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050814]/85 via-transparent to-[#050814]/85" />
+        </div>
+
+        <main className="flex-1 p-6 lg:p-8 pb-24 md:pb-8 space-y-6 max-w-7xl mx-auto w-full relative z-10">
           <div>
             <h1 className="font-heading text-2xl lg:text-3xl font-black text-white">
               Account & Privacy
@@ -64,11 +74,10 @@ export default function AccountPrivacyPage() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-5 py-1.5 text-xs font-bold rounded-lg transition-all ${
-                  activeTab === tab
-                    ? "bg-[#3b6cf6] text-white shadow-[0_0_10px_rgba(59,108,246,0.4)]"
-                    : "text-[#94a3b8] hover:text-white"
-                }`}
+                className={`px-5 py-1.5 text-xs font-bold rounded-lg transition-all ${activeTab === tab
+                  ? "bg-[#3b6cf6] text-white shadow-[0_0_10px_rgba(59,108,246,0.4)]"
+                  : "text-[#94a3b8] hover:text-white"
+                  }`}
               >
                 {tab}
               </button>
@@ -182,9 +191,8 @@ export default function AccountPrivacyPage() {
                     <button
                       type="button"
                       onClick={() => setTwoFactor(!twoFactor)}
-                      className={`w-11 h-6 rounded-full transition-colors relative flex items-center px-0.5 ${
-                        twoFactor ? "bg-[#10b981]" : "bg-[#1e293b]"
-                      }`}
+                      className={`w-11 h-6 rounded-full transition-colors relative flex items-center px-0.5 ${twoFactor ? "bg-[#10b981]" : "bg-[#1e293b]"
+                        }`}
                     >
                       <div className={`w-5 h-5 rounded-full bg-white shadow-md transition-transform ${twoFactor ? "translate-x-5" : "translate-x-0"}`} />
                     </button>

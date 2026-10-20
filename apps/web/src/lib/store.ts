@@ -480,6 +480,16 @@ class HunterStore {
     return { profile: { ...this.profile } };
   }
 
+  public updateProfile(data: Partial<HunterProfile>) {
+    this.profile = {
+      ...this.profile,
+      ...data,
+      updatedAt: new Date().toISOString(),
+    };
+    this.bumpSync();
+    return this.profile;
+  }
+
   public addQuest(questData: Partial<Quest>) {
     const newQuest: Quest = {
       id: `q-${Date.now()}`,
