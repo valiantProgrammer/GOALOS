@@ -225,11 +225,10 @@ export default function HabitsTrackerPage() {
                   key={mode}
                   type="button"
                   onClick={() => setViewMode(mode)}
-                  className={`px-4 py-1.5 text-xs font-bold rounded-lg transition-all ${
-                    viewMode === mode
+                  className={`px-4 py-1.5 text-xs font-bold rounded-lg transition-all ${viewMode === mode
                       ? "bg-[#3b6cf6] text-white shadow-[0_0_10px_rgba(59,108,246,0.4)]"
                       : "text-[#94a3b8] hover:text-white"
-                  }`}
+                    }`}
                 >
                   {mode}
                 </button>
@@ -336,11 +335,7 @@ export default function HabitsTrackerPage() {
                                   {state === "unchecked-purple" && (
                                     <div className="flex items-center">
                                       <div className="w-7 h-7 rounded-full border border-[#581c87]/80 bg-[#1e0e38]/30 hover:border-[#a855f7] transition-all transform hover:scale-110" />
-                                      {isLastRowSun && (
-                                        <span className="text-[#94a3b8]/80 text-xs ml-1 select-none pointer-events-none font-bold">
-                                          ✦
-                                        </span>
-                                      )}
+
                                     </div>
                                   )}
 
