@@ -30,6 +30,13 @@ div[class*="flex h-screen w-screen overflow-hidden bg-"] {
   background-color: transparent !important;
 }
 
+[data-nextjs-toast],
+nextjs-portal,
+#nextjs-dev-tools,
+div[data-nextjs-dialog-overlay] {
+  display: none !important;
+}
+
 /* Glass Card Token */
 .glass-card {
   background-color: var(--surface-card);

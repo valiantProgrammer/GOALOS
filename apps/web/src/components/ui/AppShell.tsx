@@ -10,6 +10,7 @@ export interface AppShellProps {
   activeRoute?: string;
   topBarProps?: TopBarProps;
   heroBanner?: React.ReactNode;
+  backgroundVariant?: string;
 }
 
 export const AppShell: React.FC<AppShellProps> = ({

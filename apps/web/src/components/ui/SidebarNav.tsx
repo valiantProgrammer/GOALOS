@@ -16,8 +16,9 @@ import {
   ShoppingBag,
   Settings,
   Shield,
+  Box,
 } from "lucide-react";
-
+import Image from "next/image";
 export interface NavItem {
   label: string;
   href: string;
@@ -34,7 +35,7 @@ export const navItems: NavItem[] = [
   { label: "Focus", href: "/focus", icon: Clock },
   { label: "Analytics", href: "/analytics", icon: BarChart2 },
   { label: "Community", href: "/community", icon: Users },
-  { label: "Shop", href: "/shop", icon: ShoppingBag },
+  { label: "Shop", href: "/shop", icon: Box },
   { label: "Settings", href: "/settings", icon: Settings },
   { label: "Admin", href: "/admin", icon: Shield, adminOnly: true },
 ];
@@ -45,33 +46,31 @@ export interface SidebarNavProps {
   activeRoute?: string;
 }
 
-export const SidebarNav: React.FC<SidebarNavProps> = ({ isAdmin = true, className, activeRoute }) => {
+export const SidebarNav: React.FC<SidebarNavProps> = ({ isAdmin = false, className, activeRoute }) => {
   const currentPathname = usePathname();
   const pathname = activeRoute || currentPathname;
 
   return (
     <aside
       className={clsx(
-        "w-60 h-screen bg-[rgba(5,11,26,0.78)] backdrop-blur-[14px] border-r border-[rgba(59,130,246,0.15)] flex flex-col justify-between py-6 px-3.5 select-none shrink-0 overflow-y-auto",
+        "w-60 h-screen bg-[rgba(5,11,26,0.78)] backdrop-blur-[14px] border-r border-[rgba(59,130,246,0.18)] flex flex-col justify-between py-5 px-4 select-none shrink-0 overflow-y-auto",
         className
       )}
     >
       <div>
+        {/* Top Window Dots */}
+
         {/* Brand Header */}
-        <div className="px-3 mb-8">
+        <div className="px-1 mb-6">
           <Link href="/dashboard" className="block">
-            <h1 className="font-heading text-2xl font-black tracking-wider text-white flex items-center gap-1">
+            <h1 className="font-heading text-2xl font-black tracking-wider text-[#00d2ff] flex items-center gap-1.5 drop-shadow-[0_0_15px_rgba(0,210,255,0.7)]">
               GOALOS
-              <span className="w-2 h-2 rounded-full bg-[#00d2ff] shadow-[0_0_8px_#00d2ff]" />
             </h1>
-            <p className="font-hud text-[10px] tracking-[0.25em] text-[#00d2ff] uppercase mt-0.5 font-bold">
-              Level Up Your Life
-            </p>
           </Link>
         </div>
 
         {/* Nav Items */}
-        <nav className="space-y-1">
+        <nav className="space-y-1.5">
           {navItems.map((item) => {
             if (item.adminOnly && !isAdmin) return null;
             const isActive = pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href));
@@ -82,17 +81,17 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({ isAdmin = true, classNam
                 key={item.href}
                 href={item.href}
                 className={clsx(
-                  "flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all group",
+                  "flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all group",
                   isActive
-                    ? "bg-[#132c66] text-[#00d2ff] shadow-[0_0_15px_rgba(0,210,255,0.2)] border border-[#204899]/60 font-bold"
-                    : "text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#0d1933]"
+                    ? "bg-[#1d4ed8] text-white shadow-[0_0_18px_rgba(29,78,216,0.65)] font-bold"
+                    : "text-[#8fa3c7] hover:text-white hover:bg-[#0c1a38]"
                 )}
               >
                 <Icon
                   size={18}
                   className={clsx(
                     "transition-colors",
-                    isActive ? "text-[#00d2ff]" : "text-[#64748b] group-hover:text-[#94a3b8]"
+                    isActive ? "text-white" : "text-[#7084a8] group-hover:text-white"
                   )}
                 />
                 <span>{item.label}</span>
@@ -100,15 +99,6 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({ isAdmin = true, classNam
             );
           })}
         </nav>
-      </div>
-
-      {/* Bottom Status strip */}
-      <div className="px-3 py-3 rounded-xl bg-[#0a1224] border border-[#142852] text-xs">
-        <div className="flex items-center justify-between text-[#94a3b8]">
-          <span className="font-hud text-[11px] tracking-wider text-[#00d2ff]">SYSTEM v1.0</span>
-          <span className="w-2 h-2 rounded-full bg-[#10b981] shadow-[0_0_6px_#10b981]" />
-        </div>
-        <div className="text-[11px] text-[#64748b] mt-1">Hunter Sync Active</div>
       </div>
     </aside>
   );
